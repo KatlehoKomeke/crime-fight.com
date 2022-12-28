@@ -220,15 +220,18 @@
 
                 const optionalSize = document.createElement('div');
                 optionalSize.className = "optional-size";
-                const noselect1 = document.createElement('div');
-                noselect1.className = "noselect";
-                noselect1.textContent = "small";
-                const noselect2 = document.createElement('div');
-                noselect2.className = "noselect";
-                noselect2.textContent = "medium";
-                const noselect3 = document.createElement('div');
-                noselect3.className = "noselect";
-                noselect3.textContent = "large";
+
+                // give people the option of size
+
+                // const noselect1 = document.createElement('div');
+                // noselect1.className = "noselect";
+                // noselect1.textContent = "small";
+                // const noselect2 = document.createElement('div');
+                // noselect2.className = "noselect";
+                // noselect2.textContent = "medium";
+                // const noselect3 = document.createElement('div');
+                // noselect3.className = "noselect";
+                // noselect3.textContent = "large";
 
                 switch(nameOfProduct){
                     case "bullet proof vest":
@@ -236,9 +239,9 @@
                         addToCart_noselect.addEventListener('click', ()=>{
                             updateCart('bullet proof vest');
                         });
-                        optionalSize.append(noselect1);
-                        optionalSize.append(noselect2);
-                        optionalSize.append(noselect3);
+                        // optionalSize.append(noselect1);
+                        // optionalSize.append(noselect2);
+                        // optionalSize.append(noselect3);
                         price.textContent = "price: $350";
                         rating.textContent = "rating: 5";
                         description.textContent = "description: (DOES NOT INCLUDE CERAMIC PLATES!) State of the art,lightweight, ergonomic and comfortable. Protects against .9mm, .357, 44 magnum rounds and blunt force trauma.";
@@ -347,30 +350,30 @@
                 blobContainer.append(product_noselect);
                 const center_noselect1 = document.createElement("p");
                 center_noselect1.className = "center noselect";
-                if(size){
-                    center_noselect1.textContent = size;
-                }else{
-                    switch(nameOfProduct){
-                        case "bullet proof vest":
-                            center_noselect1.textContent = "medium";
-                            break;
-                        case "tazer":
-                            center_noselect1.textContent = "n/a";
-                            break;
-                        case "airtag":
-                            center_noselect1.textContent = "n/a";
-                            break;
-                        case "cctv":
-                            center_noselect1.textContent = "n/a";
-                            break;
-                        case "pepper spray":
-                            center_noselect1.textContent = "n/a";
-                        break;
-                        case "pad lock":
-                            center_noselect1.textContent = "n/a";
-                        break;
-                    } 
-                }
+                // if(size){
+                //     center_noselect1.textContent = size;
+                // }else{
+                //     switch(nameOfProduct){
+                //         case "bullet proof vest":
+                //             center_noselect1.textContent = "medium";
+                //             break;
+                //         case "tazer":
+                //             center_noselect1.textContent = "n/a";
+                //             break;
+                //         case "airtag":
+                //             center_noselect1.textContent = "n/a";
+                //             break;
+                //         case "cctv":
+                //             center_noselect1.textContent = "n/a";
+                //             break;
+                //         case "pepper spray":
+                //             center_noselect1.textContent = "n/a";
+                //         break;
+                //         case "pad lock":
+                //             center_noselect1.textContent = "n/a";
+                //         break;
+                //     } 
+                // }
                 const center_noselect2 = document.createElement("p");
                 center_noselect2.className = "center noselect";
                 center_noselect2.textContent = nameOfProduct;
