@@ -310,7 +310,8 @@
                 document.getElementById("secondary-page").append(layerBlur_optionalSize);    
             }
             function setCartIsEmpty(){
-                if(JSON.parse(localStorage.getItem('cart')).length === 0){
+                console.log("localStorage.getItem('cart'): ",localStorage.getItem('cart'));
+                if( localStorage.getItem('cart') === null || JSON.parse(localStorage.getItem('cart')).length === 0){
                     const emptyCart = document.createElement("p");
                     emptyCart.textContent = "Your cart is empty, please add items to cart.";
                     document.getElementById("shopping-cart-page").append(emptyCart);
@@ -415,7 +416,7 @@
                         child = document.getElementById("shopping-cart-page").lastElementChild;
                     }
                     const cart = JSON.parse(localStorage.getItem('cart'));
-                    cart.forEach((productName,index)=>{
+                    cart?.forEach((productName,index)=>{
                         cartDisplayHelper(productName,null,index)
                     });
                     setCartIsEmpty();
@@ -432,7 +433,7 @@
             }
             function calculateTotal(){
                 let total = 0;
-                JSON.parse(localStorage.getItem('cart')).forEach((item)=>{
+                JSON.parse(localStorage.getItem('cart'))?.forEach((item)=>{
                     switch(item){
                         case 'bullet proof vest':
                             total += 350;
@@ -464,7 +465,9 @@
                 noselect1.textContent = "total: $" + calculateTotal();
                 const noselect2 = document.createElement("div");
                 noselect2.className = "noselect";
-                noselect2.textContent = "buy now";
+                if(calculateTotal() > 0){
+                    noselect2.textContent = "buy now";
+                }
                 noselect2.addEventListener('click', ()=>{
                     document.getElementById("main-page").style.display = "none";
                     document.getElementById("secondary-page").style.display = "none";
@@ -491,7 +494,7 @@
                             child = document.getElementById("shopping-cart-page").lastElementChild;
                         }
                         const cart = JSON.parse(localStorage.getItem('cart'));
-                        cart.forEach((productName,index)=>{
+                        cart?.forEach((productName,index)=>{
                             cartDisplayHelper(productName,null,index);
                         });
                         setCartIsEmpty();
@@ -585,7 +588,7 @@
             function generatePaymentItenArray(){
                 const cart = JSON.parse(localStorage.getItem('cart'));
                 const cart_array = [];
-                cart.forEach((productName,index)=>{
+                cart?.forEach((productName,index)=>{
                     cart_array.push({
                         name: productName,
                         unit_amount: {
