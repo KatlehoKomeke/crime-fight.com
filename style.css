@@ -48,6 +48,12 @@ body {
     align-items: center;
     gap: -10vmin 0px;
 }
+@media (orientation: portrait) {
+    #main-page {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
 .blob-container{
     right: 5vmin;
     height: 10vmin;
