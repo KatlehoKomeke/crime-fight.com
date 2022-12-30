@@ -4,6 +4,11 @@
     --scale: 1.2;
     --x: 80px;
     overflow: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+:root::-webkit-scrollbar {
+    display: none;
 }
 body {
     margin: 0px;
@@ -173,8 +178,13 @@ body {
     height: 90vh;
     grid-auto-rows: 15vmin;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
     place-items: center;
     color: white;
+}
+#shopping-cart-page::-webkit-scrollbar {
+    display: none;
 }
 #shopping-cart-page .shopping-cart-row{
     display: grid;
@@ -242,4 +252,9 @@ body {
     display: none;
     place-items: center;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+#payment-page ::-webkit-scrollbar {
+    display: none;
 }
