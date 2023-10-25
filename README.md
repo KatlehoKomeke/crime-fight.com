@@ -1,3 +1,3 @@
 <a href="https://crime-fight.com" target="_blank">
-    visit site crime-fight
+click here to visit crime-fight
 </a>
